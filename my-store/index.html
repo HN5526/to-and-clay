@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TO & Clay</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="logo" id="store-title">TO & CLAY</div>
+
+    <nav class="main-nav">
+      <a href="#products" onclick="scrollToProducts()">Shop</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-right">
+      <div class="lang-switcher">
+        <button onclick="setLanguage('en')">English</button>
+        <button onclick="setLanguage('ar')">العربية</button>
+        <button onclick="setLanguage('fr')">Français</button>
+        <button onclick="setLanguage('es')">Español</button>
+      </div>
+
+      <div class="cart-icon" onclick="toggleCart()" title="Cart">
+        <span class="cart-symbol">🛒</span>
+        <span id="cart-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero">
+    <div class="hero-image">
+      <img src="images/hero-candle.jpg" alt="TO & Clay handmade candle">
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow" id="hero-eyebrow">Handmade in Morocco</p>
+      <h1 class="hero-title" id="hero-title">Objects made slowly,<br>for homes lived<br>beautifully.</h1>
+      <p class="hero-subtitle" id="hero-subtitle">
+        Handmade ceramic home objects and scented candles with an expressive, considered touch.
+      </p>
+      <button class="hero-btn" onclick="scrollToProducts()" id="hero-btn">
+        Explore the Collection
+      </button>
+    </div>
+  </section>
+
+  <!-- ========== PRODUCTS ========== -->
+  <section id="products" class="products-section">
+    <div class="section-header">
+      <p class="section-eyebrow">The Collection</p>
+      <h2 id="collection-title">For the table, the shelf, and the moments in between.</h2>
+    </div>
+
+    <div id="products-grid" class="products-grid">
+      <!-- Products will be added here by JavaScript -->
+    </div>
+  </section>
+
+  <!-- ========== CART SIDEBAR ========== -->
+  <div id="cart" class="cart hidden">
+    <h2 id="cart-title">Your Cart</h2>
+    <div id="cart-items"></div>
+    <p style="margin-top: 1.5rem; font-size: 1.1rem;">
+      <span id="total-text">Total</span>: <span id="cart-total">0</span> MAD
+    </p>
+    <button onclick="checkout()" id="checkout-btn">Checkout with WhatsApp</button>
+    <button onclick="toggleCart()" id="close-btn">Close</button>
+  </div>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <button class="lightbox-arrow lightbox-prev" onclick="changeLightboxImage(-1)">‹</button>
+    <button class="lightbox-arrow lightbox-next" onclick="changeLightboxImage(1)">›</button>
+    <img src="" alt="Product image" id="lightbox-img">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
